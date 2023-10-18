@@ -9,7 +9,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true, // для поддержки default import
     "esModuleInterop": true, //esModuleInterop для использования import вместо reqiure
-//    "baseUrl": "." // для абсолютного импорта
+    "baseUrl": ".", // для абсолютного импорта
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
