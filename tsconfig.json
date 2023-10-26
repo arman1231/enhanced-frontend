@@ -12,7 +12,8 @@
     "baseUrl": ".", // для абсолютного импорта
     "paths": {
       "*": ["./src/*"]
-    }
+    },
+    "strictNullChecks": true
   },
   "ts-node": {
     "compilerOptions": {
