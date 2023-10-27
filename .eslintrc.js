@@ -33,6 +33,7 @@ module.exports = {
     "rules": {
         "no-unused-vars": "warn",
         "react/react-in-jsx-scope": "off",
-        "i18next/no-literal-string": ["error", {markupOnly: true}]
+        "i18next/no-literal-string": ["error", {markupOnly: true}],
+        "@typescript-eslint/explicit-function-return-type": "off"
     }
 }
