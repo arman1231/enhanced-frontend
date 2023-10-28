@@ -15,8 +15,12 @@ module.exports = {
                 "node": true
             },
             "files": [
-                ".eslintrc.{js,cjs}"
+                ".eslintrc.{js,cjs}",
+                "**/src/**/*.test.{ts,tsx}"
             ],
+            "rules": {
+                "i18next/no-literal-string": "off"
+            },
             "parserOptions": {
                 "sourceType": "script"
             }
@@ -33,7 +37,10 @@ module.exports = {
     "rules": {
         "no-unused-vars": "warn",
         "react/react-in-jsx-scope": "off",
-        "i18next/no-literal-string": ["error", {markupOnly: true}],
+        "i18next/no-literal-string": ["error", {markupOnly: true, ignoreAttribute: ['data-testid']}],
         "@typescript-eslint/explicit-function-return-type": "off"
+    },
+    globals: {
+        __ID_DEV__: true
     }
 }
