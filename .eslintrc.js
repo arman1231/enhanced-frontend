@@ -37,8 +37,9 @@ module.exports = {
     "rules": {
         "no-unused-vars": "warn",
         "react/react-in-jsx-scope": "off",
-        "i18next/no-literal-string": ["error", {markupOnly: true, ignoreAttribute: ['data-testid']}],
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "i18next/no-literal-string": ["error", {markupOnly: true, ignoreAttribute: ['data-testid', 'to']}],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/consistent-type-assertions": "off"
     },
     globals: {
         __ID_DEV__: true

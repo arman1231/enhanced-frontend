@@ -1,8 +1,9 @@
 import type webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { type BuildOptions } from './types/config'
+import {buildCssLoader} from "./loaders/buildCssLoader";
 
 export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+  const { isDev } = options;
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
@@ -33,27 +34,7 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
     test: /\.svg$/,
     use: ['@svgr/webpack']
   }
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => resPath.includes(('.module.')),
-            localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]'
-          }
-        }
-
-      },
-      // Compiles Sass to CSS
-      'sass-loader'
-    ]
-  }
-
+  const cssLoader = buildCssLoader(isDev)
   // Если не используется TS нужно добавить Babel
   const
     typescriptLoader = {
