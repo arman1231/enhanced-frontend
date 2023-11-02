@@ -22,13 +22,13 @@ module.exports = {
                 "i18next/no-literal-string": "off"
             },
             "parserOptions": {
-                "sourceType": "script"
+                "sourceType": "script",
             }
         }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
     },
     "plugins": [
         "react",
@@ -41,7 +41,7 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/consistent-type-assertions": "off"
     },
-    globals: {
+    "globals": {
         __ID_DEV__: true
     }
 }
