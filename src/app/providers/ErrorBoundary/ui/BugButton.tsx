@@ -16,7 +16,7 @@ export const BugButton = ({ className }: BugButtonProps) => {
   }, [error])
   return (
         <Button onClick={throwError} className={classNames('', {}, [className])}>
-            throw error
+
         </Button>
   )
 }

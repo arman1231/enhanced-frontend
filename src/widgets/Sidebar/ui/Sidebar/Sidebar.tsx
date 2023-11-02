@@ -3,7 +3,7 @@ import cls from './Sidebar.module.scss'
 import React, { useState } from 'react'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher'
-import { Button } from 'shared/ui/Button/Button'
+// import { Button } from 'shared/ui/Button/Button'
 
 interface SidebarProps {
   className?: string
@@ -12,12 +12,13 @@ interface SidebarProps {
 export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
   const [collapsed, setCollapsed] = useState(false)
 
+  // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
   const onToggle = (): void => {
     setCollapsed(prevState => !prevState)
   }
   return (
         <div data-testid='sidebar' className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <Button data-testid='sidebar-toggle' onClick={onToggle}>toggle</Button>
+            {/* <Button data-testid='sidebar-toggle' onClick={onToggle}>toggle</Button> */}
             <div className={cls.switchers}>
                 <ThemeSwitcher/>
                 <LangSwitcher className={cls.lang}/>

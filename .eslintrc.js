@@ -39,9 +39,24 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "i18next/no-literal-string": ["error", {markupOnly: true, ignoreAttribute: ['data-testid', 'to']}],
         "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/consistent-type-assertions": "off"
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
     },
     "globals": {
         __ID_DEV__: true
-    }
+    },
+    "ignorePatterns": [
+        "buildDevServer.ts",
+        "webpack.config.ts",
+        "setupTests.ts",
+        "jestEmptyComponent.tsx",
+        "jest.config.ts",
+        "config.ts",
+        "buildSvgLoader.ts",
+        "buildCssLoader.ts",
+        "buildWebpackConfig.ts",
+        "buildResolvers.ts",
+        "buildPlugins.ts",
+        "buildLoaders.ts"
+    ]
 }
