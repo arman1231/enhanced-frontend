@@ -40,7 +40,8 @@ module.exports = {
         "i18next/no-literal-string": ["error", {markupOnly: true, ignoreAttribute: ['data-testid', 'to']}],
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/consistent-type-assertions": "off",
-        "@typescript-eslint/ban-ts-comment": "off"
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off"
     },
     "globals": {
         __ID_DEV__: true
